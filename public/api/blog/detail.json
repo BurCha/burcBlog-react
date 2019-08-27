@@ -1,0 +1,13 @@
+{
+    "success":true,
+    "data":{
+        "id":1,
+        "title":"打开WebStorm中Node.Js的代码补全功能",
+        "content":"WebStorm默认内置了Node.Js的代码补全功能，但是需要手动去开启Setting->Languages & Frameworks->Node.js and NPM 找到Coding Assistance这一项然后Enable就好啦",
+        "label":"node",
+        "author":"李柏成",
+        "createdate":"2019年08月05日",
+        "commentcount":3,
+        "articletype":"代码笔记"
+    }
+}
