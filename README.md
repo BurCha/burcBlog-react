@@ -1,6 +1,7 @@
 # burcBlog-react
-柏成的个人博客-react
+本仓库是网站 http://www.burc.com.cn 的前端源码。
 
+```
 # 安装依赖
 npm install
 
@@ -9,3 +10,5 @@ npm run start
 
 # 将项目打包成静态HTML
 npm run build
+
+```
