@@ -10,5 +10,5 @@ npm run start
 
 # 将项目打包成静态HTML
 npm run build
-
 ```
+要详细了解项目是如何工作的，请参考 http://www.burc.com.cn
