@@ -1,0 +1,1 @@
+export const PIC_SHOW = "pic_show";
