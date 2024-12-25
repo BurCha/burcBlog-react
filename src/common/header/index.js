@@ -46,11 +46,10 @@ class Header extends Component {
                                  
                             </SearchWrapper>
                             {
-                                window.location.hash.includes('root') ?  (this.props.loginState ?<Fragment><NavItem className="right" onClick={this.props.logout}><span>退出</span></NavItem>
+                                this.props.loginState ? <Fragment><NavItem className="right" onClick={this.props.logout}><span>退出</span></NavItem>
                                 <Link to='/write'><NavItem className="right"><span>写文章</span></NavItem></Link>
                                 </Fragment>
-                                :<NavItem className="right" onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></NavItem>) : null
-                                
+                                :(window.location.hash.includes('root') ? <NavItem className="right" onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></NavItem> : null)
                             }
                             <LoginBox className={this.props.loginBox?"show":"hide"}>
                                 <form>
@@ -101,10 +100,10 @@ class Header extends Component {
                                     </SearchWrapper>
                                 </MenuItem> 
                                 {
-                                    window.location.hash.includes('root') ? (this.props.loginState ? <Fragment><MenuItem onClick={this.props.logout}><span>退出</span></MenuItem>
+                                    this.props.loginState ? <Fragment><MenuItem onClick={this.props.logout}><span>退出</span></MenuItem>
                                       <Link to='/write'><MenuItem><span>写文章</span></MenuItem></Link>
                                     </Fragment>
-                                    : <MenuItem onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></MenuItem>) :null
+                                   :(window.location.hash.includes('root') ? <NavItem className="right" onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></NavItem> : null)
                                    
                                 }
                                 <LoginBox className={this.props.loginBox?"show phone":"hide phone"}>
@@ -153,6 +152,7 @@ const mapStateToProps = (state)=>{
         loginNavShow:state.getIn(["headerReducer","loginNavShow"]), // 登录菜单是否显示
         loginBox:state.getIn(["headerReducer","loginBox"]), // 登录框是否显示
         loginState:state.getIn(["headerReducer","loginState"]), // 是否登录
+        root: window.location.hash.includes('root'), // 是否登录
         loginMessage:state.getIn(["headerReducer","loginMessage"]), // 登录错误信息
         search:state.getIn(["codeReducer","search"]) // 搜索界面更换
     }
