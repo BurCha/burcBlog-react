@@ -8,6 +8,7 @@ const defaultState = fromJS({
     author:"",
     label:"",
     option:"",
+    abstract:"",
     content:"",
     updateState:false,
     editor:[]
@@ -23,6 +24,7 @@ export default(state=defaultState,action)=>{
                 author:action.author,
                 label:action.label,
                 option:action.articletype,
+                abstract:action.abstract,
                 content:action.content
             });
         case actionTypes.CHANGE_TITLE_UPD:
@@ -33,6 +35,8 @@ export default(state=defaultState,action)=>{
             return state.set("label",action.label);
         case actionTypes.CHANGE_SELECT_UPD:
             return state.set("option",action.option);
+        case actionTypes.CHANGE_ABSTRACT_UPD:
+            return state.set("abstract",action.abstract);
         case actionTypes.CHANGE_EDITOR_UPD:
             return state.set("content",action.content);
         case actionTypes.UPDATE_BLOG:

@@ -22,7 +22,7 @@ export const editorChangeAction = (html)=>({
     type:actionTypes.CHANGE_EDITOR,
     content:html
 });
-export const addBlogAction = (title,author,label,option,content,createdate)=>{
+export const addBlogAction = (title,author,label,option,abstract,content,createdate)=>{
     return (dispatch)=>{
         axios.post('/api/blog/new', {
         // axios.post('https://www.easy-mock.com/mock/5d48fd5ffc529c75f94136fd/api/blog/new', {
@@ -30,6 +30,7 @@ export const addBlogAction = (title,author,label,option,content,createdate)=>{
             author: author,
             label: label,
             option: option,
+            abstract: abstract,
             content: content,
             createdate: createdate
           }).then((res)=>{

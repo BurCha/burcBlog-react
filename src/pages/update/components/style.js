@@ -49,6 +49,17 @@ export const Input = styled.input`
         color:#999;
     }
 `;
+export const Textarea = styled.textarea`
+    display:block;
+    width:100%;
+    height:52px;
+    margin-bottom:8px;
+    border:1px solid #ccc;
+    padding-left:10px;
+    &::placeholder{
+        color:#999;
+    }
+`;
 export const Select = styled.select`
     width:50%;
     height:30px;

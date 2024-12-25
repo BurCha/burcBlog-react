@@ -4,6 +4,7 @@ import * as actionTypes from "./actionTypes";
 const changeDetail = (data)=>({
     type:actionTypes.CHANGE_DETAIL,
     title:data.title,
+    abstract:data.abstract,
     content:data.content,
     label:data.label,
     author:data.author,

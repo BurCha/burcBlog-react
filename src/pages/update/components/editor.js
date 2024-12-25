@@ -2,7 +2,7 @@ import React,{ PureComponent,Fragment } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
-import { EditorBox,Input,Select,Button } from "./style";
+import { EditorBox,Input,Textarea,Select,Button } from "./style";
 import { ArticalBox,ArticalTitle,ArticalInfo } from "../../detail/components/style";
 import * as actionCreators from '../store/actionCreators';
 import { getDetailAction } from '../../detail/store/actionCreators';
@@ -11,7 +11,7 @@ import { Divider } from 'antd';
 
 class Editor extends PureComponent{
     render(){
-        const { title,author,label,option,content,updateState,titleChange,authorChange,labelChange,selectChange,updateBlog } = this.props;
+        const { title,author,label,option,abstract,content,updateState,titleChange,abstractChange, authorChange,labelChange,selectChange,updateBlog } = this.props;
         return(
             <Fragment>
             <EditorBox> 
@@ -23,8 +23,8 @@ class Editor extends PureComponent{
                     <option value ="闲言碎语">闲言碎语</option>
                 </Select>
                 {/* {console.log("123123")} */}
-                <Button onClick={()=>{updateBlog(this.props.match.params.id,this.title,this.author,this.label,this.option,content)}}>修改博客</Button>
-
+                <Button onClick={()=>{updateBlog(this.props.match.params.id,this.title,this.author,this.label,this.option,this.abstract, content)}}>修改博客</Button>
+                <Textarea placeholder="摘要" ref={(input)=>{this.abstract = input}}  onChange={abstractChange} value={abstract}></Textarea>
                 <div ref="editorElem">
                    
                 </div>
@@ -88,6 +88,7 @@ const mapStateToProps = (state)=>{
         author:state.getIn(["updateReducer","author"]), // 初始化数据 作者
         label:state.getIn(["updateReducer","label"]), // 初始化数据 标签
         option:state.getIn(["updateReducer","option"]), // 文章类型
+        abstract:state.getIn(["updateReducer","abstract"]), // 文章摘要
         content:state.getIn(["updateReducer","content"]), // 文章内容
         updateState:state.getIn(["updateReducer","updateState"]), // 修改博客是否完成
         // initTitle:state.getIn(["updateReducer","title"]), // 初始化数据 标题
@@ -101,6 +102,11 @@ const mapDispatchToProps = (dispatch)=>{
         // 标题发生改变
         titleChange(e){
             const action = actionCreators.titleChangeAction(e.target.value);
+            dispatch(action);
+        },
+        // 摘要发生改变
+        abstractChange(e){
+            const action = actionCreators.abstractChangeAction(e.target.value);
             dispatch(action);
         },
         // 作者发生改变
@@ -129,11 +135,11 @@ const mapDispatchToProps = (dispatch)=>{
             dispatch(action);
         },
         // 修改博客
-        updateBlog(id,title,author,label,option,content){
-            if(!title.value||!author.value||!label.value||!option.value||!content){
+        updateBlog(id,title,author,label,option,abstract,content){
+            if(!title.value||!author.value||!label.value||!option.value||!abstract.value||!content){
                 alert("请将内容填写完整")
             }else{
-                const action = actionCreators.updateBlogAction(id,title.value,author.value,label.value,option.value,content);
+                const action = actionCreators.updateBlogAction(id,title.value,author.value,label.value,option.value,abstract.value,content);
                 dispatch(action);
             }
         }

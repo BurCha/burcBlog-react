@@ -34,7 +34,8 @@ class ArticlePanel extends PureComponent{
                                             <p>{item.get('title')}</p>
                                         </Link>
                                     </ArticleHeader>
-                                    <ArticleInfo dangerouslySetInnerHTML={{__html: item.get('content')}}>
+                                    <ArticleInfo>
+                                      <p>{item.get('abstract')}</p>
                                     </ArticleInfo>
                                     <ArticleFooter>
                                         <ul>

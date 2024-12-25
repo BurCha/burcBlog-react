@@ -1,7 +1,7 @@
 import React,{ PureComponent,Fragment } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { EditorBox,Input,Select,Button } from "./style";
+import { EditorBox,Input,Textarea,Select,Button } from "./style";
 import { ArticalBox,ArticalTitle,ArticalInfo } from "../../detail/components/style";
 import * as actionCreators from '../store/actionCreators';
 import E from "wangeditor";
@@ -20,9 +20,10 @@ class Editor extends PureComponent{
                     <option value ="代码笔记">代码笔记</option>
                     <option value ="闲言碎语">闲言碎语</option>
                 </Select>
-                <Button onClick={()=>{addBlog(title,this.author,this.label,this.option,content)}}>添加博客</Button>
+                <Button onClick={()=>{addBlog(title,this.author,this.label,this.option,this.abstract, content)}}>添加博客</Button>
+                <Textarea placeholder="摘要" ref={(input)=>{this.abstract = input}}></Textarea>
                 <div ref="editorElem" >
-                    <p>请输入文章内容...[首行不能为空行][代码不能存在单引号][文章摘要为前两个p标签]</p>
+                    <p>000请输入文章内容...[首行不能为空行][代码不能存在单引号][文章摘要为前两个p标签]</p>
                 </div>
                 <Divider></Divider>
                 <ArticalBox>
@@ -117,10 +118,10 @@ const mapDispatchToProps = (dispatch)=>{
             dispatch(action);
         },
         // 添加博客
-        addBlog(title,author,label,option,content){
+        addBlog(title,author,label,option,abstract,content){
             // console.log(content)
             const reg = /(?!<p><br><\/p>|<p><br><\/p>)^.*$/; //匹配了首行不为空
-            if(!title||!author.value||!label.value||!option.value||!reg.test(content)){
+            if(!title||!author.value||!label.value||!abstract.value||!option.value||!reg.test(content)){
                 alert("请将内容填写完整")
             }else{
                 const year = new Date().getFullYear();
@@ -130,7 +131,7 @@ const mapDispatchToProps = (dispatch)=>{
                 date = date<10?'0'+date:date;
                 const createdate = year + "年" + month + "月" + date +"日";
 
-                const action = actionCreators.addBlogAction(title,author.value,label.value,option.value,content,createdate);
+                const action = actionCreators.addBlogAction(title,author.value,label.value,option.value,abstract.value,content,createdate);
                 dispatch(action);
             }
         }
