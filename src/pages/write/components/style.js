@@ -44,6 +44,7 @@ export const Input = styled.input`
     margin-bottom:8px;
     border:1px solid #ccc;
     padding-left:10px;
+    font-size: 12px;
     &::placeholder{
         color:#999;
     }
@@ -55,6 +56,8 @@ export const Textarea = styled.textarea`
     margin-bottom:8px;
     border:1px solid #ccc;
     padding-left:10px;
+    font-size: 12px;
+    line-height: 1.5em;
     &::placeholder{
         color:#999;
     }
@@ -65,6 +68,7 @@ export const Select = styled.select`
     margin-bottom:10px;
     padding-left:10px;
     border:1px solid #ccc;
+    font-size: 12px;
 `;
 export const Button = styled.button`
     float:right;
