@@ -46,10 +46,10 @@ class Header extends Component {
                                  
                             </SearchWrapper>
                             {
-                                this.props.loginState ?<Fragment><NavItem className="right" onClick={this.props.logout}><span>退出</span></NavItem>
+                                window.location.hash.includes('root') ?  (this.props.loginState ?<Fragment><NavItem className="right" onClick={this.props.logout}><span>退出</span></NavItem>
                                 <Link to='/write'><NavItem className="right"><span>写文章</span></NavItem></Link>
                                 </Fragment>
-                                :<NavItem className="right" onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></NavItem>
+                                :<NavItem className="right" onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></NavItem>) : null
                                 
                             }
                             <LoginBox className={this.props.loginBox?"show":"hide"}>
@@ -101,10 +101,10 @@ class Header extends Component {
                                     </SearchWrapper>
                                 </MenuItem> 
                                 {
-                                    this.props.loginState ? <Fragment><MenuItem onClick={this.props.logout}><span>退出</span></MenuItem>
+                                    window.location.hash.includes('root') ? (this.props.loginState ? <Fragment><MenuItem onClick={this.props.logout}><span>退出</span></MenuItem>
                                       <Link to='/write'><MenuItem><span>写文章</span></MenuItem></Link>
                                     </Fragment>
-                                    : <MenuItem onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></MenuItem>
+                                    : <MenuItem onClick={()=>{this.props.loginBoxShowHide(true)}}><span>登录</span></MenuItem>) :null
                                    
                                 }
                                 <LoginBox className={this.props.loginBox?"show phone":"hide phone"}>
