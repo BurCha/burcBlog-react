@@ -1,5 +1,5 @@
 import React,{ Component,Fragment } from 'react';
-import { LeftSideBarWrapper,SideBarScroll,Avatar,AvatarWord,AvatarItem,Nav,NavItem,Footer,FooterItem } from './style';
+import { LeftSideBarWrapper,SideBarScroll,Avatar,AvatarWord,AvatarItem,Nav,NavItem,Footer,FooterItem, Img } from './style';
 import { CSSTransition } from 'react-transition-group';
 import 'antd/dist/antd.css';
 import AvatarImg from '../../statics/headicon.jpg';
@@ -77,14 +77,14 @@ class LeftSideBar extends Component {
                         </SideBarScroll>
                         {/* 底部页脚 */}
                         <Footer>
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.jianshu.com/u/78344e8e0450">
-                                <FooterItem><span className="iconfont">&#xe787;</span><span>简书</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.cnblogs.com/burc">
+                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><span>博客园</span></FooterItem>
                             </a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/BurCha">
-                                <FooterItem><span className="iconfont">&#xe64a;</span><span>GitHub</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/user/2057887654093064/columns">
+                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><span>掘金</span></FooterItem>
                             </a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://me.csdn.net/lbc1477996221">
-                                <FooterItem><span className="iconfont">&#xe600;</span><span>CSDN</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/burc-li">
+                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><span>GitHub</span></FooterItem>
                             </a>
                         </Footer>
                 </LeftSideBarWrapper>   
@@ -127,14 +127,14 @@ class LeftSideBar extends Component {
                         </SideBarScroll>
                         {/* 底部页脚 */}
                         <Footer>
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.zhihu.com/people/li-bai-cheng-51-70/answers">
-                                <FooterItem><span className="iconfont">&#xe69a;</span><span>知乎</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.cnblogs.com/burc">
+                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><span>博客园</span></FooterItem>
                             </a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://weibo.com/6066984478/profile?topnav=1&wvr=6&is_all=1">
-                                <FooterItem><span className="iconfont">&#xe619;</span><span>微博</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/user/2057887654093064/columns">
+                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><span>掘金</span></FooterItem>
                             </a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://me.csdn.net/lbc1477996221">
-                                <FooterItem><span className="iconfont">&#xe600;</span><span>CSDN</span></FooterItem>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/burc-li">
+                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><span>GitHub</span></FooterItem>
                             </a>
                         </Footer>
                 </LeftSideBarWrapper>   

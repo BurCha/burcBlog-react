@@ -35,6 +35,11 @@ export const SideBarScroll = styled.div`
     overflow:auto;
     // border:1px solid #f00;
 `;
+export const Img = styled.img`
+    margin-top: 4px;
+    width: 19px;
+    heght: 19px;
+`;
 export const Avatar = styled.div`
     // border-bottom:1px solid #fff;
     cursor:pointer;
