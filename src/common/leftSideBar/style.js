@@ -25,6 +25,9 @@ export const LeftSideBarWrapper = styled.div`
     .divider{
         margin:0px 0;
     }
+    .text{
+      font-szie: 12px;
+    }
 `;
 export const SideBarScroll = styled.div`
     position:absolute;
@@ -38,7 +41,10 @@ export const SideBarScroll = styled.div`
 export const Img = styled.img`
     margin-top: 4px;
     width: 19px;
-    heght: 19px;
+    height: 19px;
+`;
+export const TagLabel = styled.span`
+   font-size: 13px;
 `;
 export const Avatar = styled.div`
     // border-bottom:1px solid #fff;

@@ -1,5 +1,5 @@
 import React,{ Component,Fragment } from 'react';
-import { LeftSideBarWrapper,SideBarScroll,Avatar,AvatarWord,AvatarItem,Nav,NavItem,Footer,FooterItem, Img } from './style';
+import { LeftSideBarWrapper,SideBarScroll,Avatar,AvatarWord,AvatarItem,Nav,NavItem,Footer,FooterItem, Img, TagLabel } from './style';
 import { CSSTransition } from 'react-transition-group';
 import 'antd/dist/antd.css';
 import AvatarImg from '../../statics/headicon.jpg';
@@ -78,13 +78,13 @@ class LeftSideBar extends Component {
                         {/* 底部页脚 */}
                         <Footer>
                             <a target="_blank" rel="noopener noreferrer" href="https://www.cnblogs.com/burc">
-                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><span>博客园</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><TagLabel>博客园</TagLabel></FooterItem>
                             </a>
                             <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/user/2057887654093064/columns">
-                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><span>掘金</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><TagLabel>掘金</TagLabel></FooterItem>
                             </a>
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/burc-li">
-                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><span>GitHub</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><TagLabel>GitHub</TagLabel></FooterItem>
                             </a>
                         </Footer>
                 </LeftSideBarWrapper>   
@@ -128,13 +128,13 @@ class LeftSideBar extends Component {
                         {/* 底部页脚 */}
                         <Footer>
                             <a target="_blank" rel="noopener noreferrer" href="https://www.cnblogs.com/burc">
-                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><span>博客园</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/bokeyuan.png')}></Img><TagLabel>博客园</TagLabel></FooterItem>
                             </a>
                             <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/user/2057887654093064/columns">
-                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><span>掘金</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/juejin.png')}></Img><TagLabel>掘金</TagLabel></FooterItem>
                             </a>
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/burc-li">
-                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><span>GitHub</span></FooterItem>
+                                <FooterItem><Img alt='' src = {require('../../statics/github-fill.png')}></Img><TagLabel>GitHub</TagLabel></FooterItem>
                             </a>
                         </Footer>
                 </LeftSideBarWrapper>   
